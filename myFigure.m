@@ -22,7 +22,7 @@ function varargout = myFigure(varargin)
 
 % Edit the above text to modify the response to help myFigure
 
-% Last Modified by GUIDE v2.5 27-Feb-2017 19:13:25
+% Last Modified by GUIDE v2.5 27-Feb-2017 21:59:42
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
