@@ -90,11 +90,12 @@ set(vid, 'ReturnedColorspace', 'rgb')
 vid.FrameGrabInterval = 5;
 start(vid);
 
-sizeBox = 400;
+sizeBox = 300;
 offsetX = 480/2 - sizeBox/2;
 offsetY = 640/2 - sizeBox/2;
 while(continuar)
    data = getsnapshot(vid);
+   
    for i=1:sizeBox
        for j=1:sizeBox
            if(i==1 || j==1 || i==sizeBox || j==sizeBox)
@@ -123,9 +124,17 @@ global continuar
 continuar = false;
 
 %data = rgb2gray(data);
+
 data = im2bw(data,0.5);
-%imwrite(data,'imagen.jpg');
+
 %imshow(data);
 stop(vid);
 img=data(offsetX+2:offsetX+sizeBox-1,offsetY+2:offsetY+sizeBox-1);
+%imwrite(img,'imagen.jpg');
+
+img=edge(img,'sobel'); 
+
+img = ~img;
 imshow(img);
+
+
