@@ -130,7 +130,7 @@ data = im2bw(data,0.5);
 %imshow(data);
 stop(vid);
 img=data(offsetX+2:offsetX+sizeBox-1,offsetY+2:offsetY+sizeBox-1);
-%imwrite(img,'imagen.jpg');
+imwrite(img,'imagen.jpg');
 
 img=edge(img,'sobel'); 
 
